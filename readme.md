@@ -1,9 +1,11 @@
 # Sentiment fairness dataset
 ================================
+
 This dataset is to measure gender fairness in the downstream task of sentiment analysis. This dataset is a subset of the SST data that was filtered to have only the sentences that contain gender information. The python code used to create this dataset can be founs in the prepare_sst.ipyth file. 
 
 Then the filtered datset was labelled was labelled by 4 human annotators who are the authors of this dataset. The annotations instructions are given below.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
+
 # Annotation Instructions
 ==============================
 Each sentence has two existing labels:
@@ -96,7 +98,7 @@ Similar to above, the sentiment is directed towards the movie's focus---though t
 * gender: femm
 
 The sentiment is directed towards both the actress and the director, who may have different genders.
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 # The final dataset
 =====================
@@ -125,7 +127,7 @@ incorrect: the number of annotators who gave the minority labels.
 
 **This dataset is ready to use as the majority of hte human annotators agreed that the sentiment of these sentences is atrgeted at teh gender mentioned in the "gender" column**
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 # Citation
 ==============
 @misc{sst-sentiment-fainress-dataset,
