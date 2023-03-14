@@ -8,6 +8,7 @@ Then the filtered datset was labelled was labelled by 4 human annotators who are
 
 # Annotation Instructions
 ==============================
+
 Each sentence has two existing labels:
 
 * 'label' gives the sentiment score
@@ -130,6 +131,7 @@ incorrect: the number of annotators who gave the minority labels.
 ---
 # Citation
 ==============
+
 @misc{sst-sentiment-fainress-dataset,
   title={A dataset to measure fairness in the sentiment analysis task},
   author={gero,Katy and Butters,Nathan and Bethke, Anna and Elsafoury, Fatma},
