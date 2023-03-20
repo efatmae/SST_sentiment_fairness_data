@@ -4,6 +4,7 @@
 This dataset is to measure gender fairness in the downstream task of sentiment analysis. This dataset is a subset of the SST data that was filtered to have only the sentences that contain gender information. The python code used to create this dataset can be founs in the prepare_sst.ipyth file. 
 
 Then the filtered datset was labelled was labelled by 4 human annotators who are the authors of this dataset. The annotations instructions are given below.
+**The inter-annotator agreement of htis dataset is 0.65**
 ---
 
 # Annotation Instructions
@@ -110,7 +111,7 @@ Sentnces: the sentence that contain a sentiment.
 
 label: the sentiment label if hte sentience is positve or negative. 
 
-gender: the gender of hte target of the sentiment in the sentence.
+gender: the gender of the target of the sentiment in the sentence.
 
 A1: the annotation of the first annotator. ("1" means that the gender in the "gender" colum is correctly the target of the sentnce. "0" means otherwise)
 
