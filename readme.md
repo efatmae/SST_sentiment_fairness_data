@@ -1,10 +1,14 @@
-# Sentiment fairness dataset
+# Sentiment gender fairness dataset
 ================================
 
-This dataset is to measure gender fairness in the downstream task of sentiment analysis. This dataset is a subset of the SST data that was filtered to have only the sentences that contain gender information. The python code used to create this dataset can be founs in the prepare_sst.ipyth file. 
+This dataset is to measure gender fairness in the downstream task of sentiment analysis. It is a subset of the [Stanford Sentiment Treebank](https://nlp.stanford.edu/sentiment/index.html) (SST) that contains **only sentences in which the sentiment is directed towards a gendered person**.
 
-Then the filtered datset was labelled was labelled by 4 human annotators who are the authors of this dataset. The annotations instructions are given below.
-**The inter-annotator agreement of htis dataset is 0.65**
+First the SST dataset was automatically filtered to have only the sentences that contain gender information. The python code used to create this dataset can be found in the `prepare_sst.ipynb` file. 
+
+Then the filtered datset was labelled by 4 human annotators who are the authors of this dataset. The intention was to keep sentences in which the sentiment of the sentence was directed at a gendered person. The annotations instructions are given below.
+
+Each data point has 3 annotations. The fraction of data points in which all 3 annotators were in agreement is .65. The Fleiss's Kappa inter-annotator agreement of this dataset is .53 (moderate agreement).
+
 ---
 
 # Annotation Instructions
@@ -13,7 +17,7 @@ Then the filtered datset was labelled was labelled by 4 human annotators who are
 Each sentence has two existing labels:
 
 * 'label' gives the sentiment score
-* 'gender' gives the guessed gender of the target of the sentiment
+* 'gender' gives the guessed gender of the target of the sentiment (based on the presence of gendered words in the sentece)
 
 The 'gender' label has two tags:
 
@@ -100,38 +104,40 @@ Similar to above, the sentiment is directed towards the movie's focus---though t
 * gender: femm
 
 The sentiment is directed towards both the actress and the director, who may have different genders.
+
 ---
 
 # The final dataset
 =====================
 
-The final dataset conatina the following columns:
+The final dataset contains the following columns:
 
-Sentnces: the sentence that contain a sentiment.
+* *sentences*: the sentence that contain a sentiment.
 
-label: the sentiment label if hte sentience is positve or negative. 
+* *label*: the sentiment label indicating if the sentience is positve or negative. 
 
-gender: the gender of the target of the sentiment in the sentence.
+* *gender*: the gender of the target of the sentiment in the sentence.
 
-A1: the annotation of the first annotator. ("1" means that the gender in the "gender" colum is correctly the target of the sentnce. "0" means otherwise)
+* *A1*: the annotation of the first annotator. ("1" means that the gender in the "gender" colum is correctly the target of the sentnce. "0" means otherwise)
 
-A2: the annotation of the second annotator. ("1" means that the gender in the "gender" colum is correctly the target of the sentnce. "0" means otherwise)
+* *A2*: the annotation of the second annotator. ("1" means that the gender in the "gender" colum is correctly the target of the sentnce. "0" means otherwise)
 
-A3: the annotation of the third annotator. ("1" means that the gender in the "gender" colum is correctly the target of the sentnce. "0" means otherwise)
+* *A3*: the annotation of the third annotator. ("1" means that the gender in the "gender" colum is correctly the target of the sentnce. "0" means otherwise)
 
-Keep: a boolean indicating wheather to keeep this sentnce or not. "Keep" means that the gender of this sentence was labelled by more than one annotator as correct.
+* *keep*: a boolean indicating wheather to keeep this sentnce or not. "Keep" means that the gender of this sentence was labelled by more than one annotator as correct.
 
-agreement: the number of annotators who agreeed o nteh label.
+* *agreement*: the number of annotators who agreeed on the label.
 
-correct: the number of annotators who gave the majority of labels.
+* *correct*: the number of annotators who gave the majority of labels.
 
-incorrect: the number of annotators who gave the minority labels.
+* *incorrect*: the number of annotators who gave the minority labels.
 
-**This dataset is ready to use as the majority of hte human annotators agreed that the sentiment of these sentences is atrgeted at teh gender mentioned in the "gender" column**
+**This dataset is ready to use as the majority of the human annotators agreed that the sentiment of these sentences is targeted at the gender mentioned in the "gender" column.**
 
 ---
 # Citation
 ==============
+
 
 @misc{sst-sentiment-fainress-dataset,
   title={A dataset to measure fairness in the sentiment analysis task},
@@ -139,4 +145,5 @@ incorrect: the number of annotators who gave the minority labels.
   howpublished={https://github.com/efatmae/SST_sentiment_fairness_data},
   year={2023}
 }
+
 
